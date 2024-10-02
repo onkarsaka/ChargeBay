@@ -189,34 +189,52 @@ const ChargeBayHome = () => {
     }
   };
 
+  const isMobileView = window.innerWidth <= 768;
+
   return (
     <div className="chargebay-home">
       <main>
         <div id='hero-header' style={{ backgroundImage: `url(${bannerimg})` }}>
           <header className="header">
-            <AnimatedSection animation='flyIn' direction='up'>
+            <AnimatedSection animation="flyIn" direction="up">
               <div className="logo">
                 <img src={logo} alt="Logo" />
               </div>
             </AnimatedSection>
-            <AnimatedSection animation='flyIn' direction='up'>
-              <nav>
+            <AnimatedSection animation="flyIn" direction="up">
+              <nav id='desknavs'>
+                <ul >
+                  <li>Drivers</li>
+                  <li>Hosts </li>
+                  <li>Our Solution</li>
+                  <li>Our Partners</li>
+                  <li>The Company</li>
+                  <div className="cta-buttons">
+                    <button className="host-station">Host a Station</button>
+                    <button className="learn-more contacts"><span>Contact</span></button>
+                  </div>
+                </ul>
+              </nav>
+              <nav id='mobnavs'>
                 <button className="menu-toggle" onClick={toggleMenu}>
                   {isMenuOpen ? '✖' : '☰'}
                 </button>
-                <nav>
-                  <ul className={isMenuOpen ? 'open' : ''}>
-                    <li>Drivers</li>
-                    <li>Hosts</li>
-                    <li>Our Solution</li>
-                    <li>Our Partners</li>
-                    <li>The Company</li>
-                    <div className="cta-buttons">
-                      <button className="host-station">Host a Station</button>
-                      <button className="learn-more contacts"><span>Contact</span></button>
-                    </div>
-                  </ul>
-                </nav>
+                <ul className={isMenuOpen ? 'open' : 'close'}>
+                  <div className="logo-nav">
+                    <img src={logo} alt="Logo" />
+                  </div>
+                  <li>Drivers ▼</li>
+                  <li>Hosts ▼</li>
+                  <li>Our Solution ▼</li>
+                  <li>Our Partners ▼</li>
+                  <li>The Company ▼</li>
+                  <h5>Are you host?</h5>
+                  <h3>Log in &#x2192;</h3>
+                  <div className="cta-buttons">
+                    <button className="host-station">Host a Station</button>
+                    <button className="learn-more contacts"><span>Contact</span></button>
+                  </div>
+                </ul>
               </nav>
             </AnimatedSection>
           </header>
@@ -250,11 +268,13 @@ const ChargeBayHome = () => {
             <p>Designed to streamline the complexities of multi-vehicle EV charging stations, ChargeBay provides <span className="highlight-black">seamless charging & power management</span> for any commercial development, along with easy booking and scheduling convenience for customers.</p>
             <button className="learn-more"><span>Learn More</span></button>
           </div>
-          <AnimatedSection animation='flyIn' direction='down'>
-            <div className='chargerimagediv'>
+
+          <div className='chargerimagediv'>
+            <AnimatedSection animation='flyIn' direction='down'>
               <img src={chargerimg} alt="" />
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          </div>
+
         </section>
 
         <section className="cost-benefit">
@@ -351,7 +371,7 @@ const ChargeBayHome = () => {
             </div>
           </div>
           <div className="phone-mockup">
-            <AnimatedSection animation='flyIn' direction='right' length={100} delay={0.5}>
+            <AnimatedSection animation={!isMobileView ? "flyIn" : "slideIn"} direction={!isMobileView ? 'right' : "up"} length={150} delay={0.5}>
               <img src={phone} alt="ChargeBay App Mockup" />
             </AnimatedSection>
           </div>
@@ -369,9 +389,9 @@ const ChargeBayHome = () => {
                   imageSrc={lookingfor1}
                 />
                 <Card
-                  title="To get about "
+                  title="Providing efficient EV charging service, without breaking the bank."
                   description=""
-                  buttonText="Book Now"
+                  buttonText="Learn More"
                   imageSrc={lookingfor2}
                   optionalcharger={chargerimg}
                 />
@@ -383,8 +403,8 @@ const ChargeBayHome = () => {
         <section className="map">
           <h2>ChargeBay- Making EV Charging <span className="highlight-green">Easy</span></h2>
           <div className="map-container">
-            <img src={mapimg} alt="" className='mapdesk'/>
-            <img src={mapimgmob} alt="" className='mapmob'/>
+            <img src={mapimg} alt="" className='mapdesk' />
+            <img src={mapimgmob} alt="" className='mapmob' />
           </div>
         </section>
 
@@ -419,46 +439,44 @@ const ChargeBayHome = () => {
             <h2 className="customer-section-title">
               What Our Customer Say
             </h2>
-            <AnimatedSection animation='flyIn' direction='right' length={150}>
-              <div
-                ref={testimonialRef}
-                className="customer-testimonial-list"
-              >
-                {testimonials.map((testimonial) => (
-                  <div
-                    key={testimonial.id}
-                    className="customer-testimonial-item"
-                  >
-                    <div className="customer-testimonial-card">
-                      <div className="customer-quote-mark">"</div>
-                      <blockquote className="customer-testimonial-quote">
-                        {testimonial.quote}
-                      </blockquote>
-                      <div className="customer-testimonial-footer">
-                        <img
-                          alt={testimonial.name}
-                          className="customer-testimonial-image"
-                          height="40"
-                          src={person}
-                          width="40"
-                        />
-                        <div>
-                          <div className="customer-testimonial-name">{testimonial.name}</div>
-                          <div className="customer-testimonial-location">{testimonial.location}</div>
-                        </div>
-                        <button
-                          onClick={handleNextTestimonial}
-                          className="customer-next-testimonial-btn"
-                          aria-label="Next testimonial"
-                        >
-                          <ArrowRight className="customer-arrow-icon" />
-                        </button>
+            <div
+              ref={testimonialRef}
+              className="customer-testimonial-list"
+            >
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="customer-testimonial-item"
+                >
+                  <div className="customer-testimonial-card">
+                    <div className="customer-quote-mark">"</div>
+                    <blockquote className="customer-testimonial-quote">
+                      {testimonial.quote}
+                    </blockquote>
+                    <div className="customer-testimonial-footer">
+                      <img
+                        alt={testimonial.name}
+                        className="customer-testimonial-image"
+                        height="40"
+                        src={person}
+                        width="40"
+                      />
+                      <div>
+                        <div className="customer-testimonial-name">{testimonial.name}</div>
+                        <div className="customer-testimonial-location">{testimonial.location}</div>
                       </div>
+                      <button
+                        onClick={handleNextTestimonial}
+                        className="customer-next-testimonial-btn"
+                        aria-label="Next testimonial"
+                      >
+                        <ArrowRight className="customer-arrow-icon" />
+                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
-            </AnimatedSection>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -47,6 +47,10 @@ p {
     padding: 0.3rem 3rem;
 }
 
+#mobnavs {
+    display: none;
+}
+
 .logo {
     display: flex;
     flex-direction: row;
@@ -85,7 +89,6 @@ nav ul li {
 
 .cta-buttons button {
     margin-left: 1rem;
-
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
@@ -666,8 +669,8 @@ nav ul li {
 
 .card-charger {
     object-fit: fill;
-    margin-left: 50%;
-    margin-top: -50px;
+    margin-left: 55%;
+    margin-top: -80px;
     width: 50%;
     height: fit-content;
 }
@@ -958,23 +961,6 @@ nav ul li {
     border-radius: 8px;
 }
 
-@media (max-width: 1024px) {
-    .case-study {
-        flex-direction: column;
-        padding: 60px 40px;
-    }
-
-    .case-study-content,
-    .case-study-image {
-        max-width: 100%;
-        padding-right: 0;
-    }
-
-    .case-study-image {
-        margin-top: 40px;
-    }
-}
-
 .footer {
     background-color: var(--dark-theme);
     color: var(--white);
@@ -1169,30 +1155,85 @@ nav ul li {
         /* Ensures header content is above other sections */
     }
 
+    #desknavs {
+        display: none;
+    }
+
+    #mobnavs {
+        display: block;
+    }
+
+    .logo-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        object-fit: cover;
+        width: auto;
+        padding-top: 20px;
+    }
+
+    .logo-nav img{
+        width: 200px;
+        margin:  -10px;
+        margin-left: -30px;
+        margin-bottom: 20px;
+    }
+
     .header nav ul {
         display: none;
         /* Hidden by default */
         position: absolute;
-        top: 80px;
-        right: 20px;
-        width: 300px;
+        top: -50px;
+        right: 0px;
+        width: 350px;
         height: auto;
         background-color: var(--dark-theme);
         z-index: 1000;
         /* Ensures menu floats over content */
-        border-radius: 9px;
-        padding: 1rem;
-        text-align: right;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        padding: 2rem 2rem;
+        text-align: left;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         /* Adds shadow to float over elements */
         transition: all 0.3s ease-in-out;
-        /* Smooth opening */
+        /* max-height: 0px;
+        opacity: 0; */
+    }
+
+    @keyframes dropdownAnimation {
+        0% {
+          max-height: 0;
+          opacity: 0;
+        }
+        100% {
+           /* Adjust based on your dropdown content */
+          opacity: 1;
+          max-height: 500px;
+        }
+      }
+      
+      /* Keyframe for dropdown closing animation */
+      @keyframes dropdownCloseAnimation {
+        0% {
+          max-height: 500px;
+          opacity: 1;
+        }
+        100% {
+          max-height: 0;
+          opacity: 0;
+        }
+      }
+
+    .header nav ul li{
+        font-size: 1.2rem;
     }
 
     .header nav ul.open {
         display: block;
-        /* Shows when the menu is toggled open */
+        /* animation: dropdownAnimation 0.8s forwards ease-in-out; */
     }
+
 
     .header .menu-toggle {
         display: block;
@@ -1222,18 +1263,6 @@ nav ul li {
         margin-top: 0.5rem;
     }
 
-    nav ul {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-    }
-
-    nav ul.open {
-        max-height: 500px;
-        /* Adjust based on your menu content */
-        transition: max-height 0.5s ease-in-out;
-        /* Smooth transition when opening */
-    }
 
     /*# hero section start*/
     .hero {
@@ -1272,7 +1301,7 @@ nav ul li {
         display: none;
     }
 
-    /*# hero section start*/
+    /*# hero section end*/
 
     /*# greener-future section start*/
 
@@ -1315,10 +1344,15 @@ nav ul li {
         max-width: 350px;
     }
 
-    .streamlinesection img {
-        margin-top: 0;
-        margin-left: 120px;
+    .chargerimagediv {
         width: 300px;
+        height: auto;
+    }
+
+    .chargerimagediv img {
+        margin-top: -30px;
+        margin-left: 110px;
+        width: 100%;
         height: 280px;
     }
 
@@ -1379,7 +1413,7 @@ nav ul li {
 
     .sidebar {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         width: auto;
         background-color: var(--dark-theme);
         padding: 10px;
@@ -1388,9 +1422,10 @@ nav ul li {
 
 
     .tab-button {
-        background: none;
+        background: var(--dark-theme);
         font-size: 16px;
         text-align: none;
+        width: fit-content;
         padding: 0;
         margin: 0;
         margin-left: 10px;
@@ -1457,8 +1492,7 @@ nav ul li {
     }
 
     .phone-mockup {
-        margin-top: 1rem;
-        margin-left: 2rem;
+        margin-left: 50;
     }
 
     /*# app-features section end*/
@@ -1474,6 +1508,7 @@ nav ul li {
 
     .card-content {
         padding: .8rem;
+        height: auto;
     }
 
     .card-title {
@@ -1489,6 +1524,14 @@ nav ul li {
         grid-template-columns: none;
         /* md:grid-cols-2 */
         gap: 2rem;
+    }
+
+    .card-charger {
+        object-fit: fill;
+        margin-left: 60%;
+        margin-top: -50px;
+        width: 150px;
+        height: fit-content;
     }
 
     /*# looking-for section end*/
@@ -1598,7 +1641,7 @@ nav ul li {
     }
 
     .customer-testimonial-item {
-        padding: 0 20px;
+        padding: 0 0;
     }
 
     .customer-testimonial-card {
@@ -1649,8 +1692,21 @@ nav ul li {
     /*# community section end*/
 
     /*# case-study section start*/
+
+
+
+    .case-study-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .case-study-image {
+        margin-top: 40px;
+    }
+
     .case-study {
         display: grid;
+        flex-direction: column;
         padding: 20px;
         padding-bottom: 0;
     }
@@ -1661,10 +1717,16 @@ nav ul li {
 
     .case-study-image {
         border-radius: 9px;
-        padding-left: 20px;
+        padding-left: 0px;
         width: 100%;
-        height: auto;
+        height: 300px;
         margin-bottom: 150px;
+        object-fit: cover;
+    }
+
+    .case-study-image img {
+        width: 100%;
+        height: 100%;
     }
 
     /*# case-study section end*/
