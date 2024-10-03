@@ -48,6 +48,20 @@ import yt from "../Images/yt logo.png"
 
 const ChargeBayHome = () => {
 
+  useEffect(() => {
+    const setViewport = () => {
+      let viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (!viewportMeta) {
+        viewportMeta = document.createElement('meta');
+        viewportMeta.name = "viewport";
+        document.head.appendChild(viewportMeta);
+      }
+      viewportMeta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+    };
+
+    setViewport();
+  }, []);
+
   const isMobileView = window.innerWidth <= 768;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

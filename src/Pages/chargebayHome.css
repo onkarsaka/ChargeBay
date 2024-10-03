@@ -277,7 +277,7 @@ nav ul {
 }
 
 .contact-form-overlay {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0;
     width: 100%;
@@ -286,15 +286,18 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    z-index: 1002;
-    animation: fadeIn 0.3s ease-out;
+    z-index: 9999;
+    background-position-x: center;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .contact-form {
+    position: fixed;
+    z-index: 9999;
     width: 100%;
     max-width: 400px;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--white);
     padding: 20px;
     overflow-y: auto;
     animation: slideIn 0.3s ease-out;
@@ -1416,6 +1419,7 @@ label {
 
     .header nav ul li {
         font-size: 1.2rem;
+        margin-left: 5px;
     }
 
     .header nav ul.open {
@@ -1427,6 +1431,10 @@ label {
 
     .header nav ul.close {
         animation: dropdownCloseAnimation 0.8s forwards ease-in-out;
+    }
+
+    .header nav ul h5{
+        font-size: .8rem;
     }
 
     .header .menu-toggle {
@@ -1449,21 +1457,29 @@ label {
     }
 
     .nav-link {
+        font-size: 1.2rem;
         color: var(--black);
+        gap: 1;
+    }
+
+    .nav-item:hover{
+        display: block;
     }
 
     .dropdown-menu {
-        display: none;
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 50px;
         background-color: #1a1a1a;
-        min-width: 100px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
         list-style-type: none;
         padding: 0;
+    }
+
+    .dropdown-menu a{
+        font-size: 1rem;
+        width: fit-content;
     }
 
     .navbtn {
@@ -1684,13 +1700,16 @@ label {
 
     /*# muli-family section start*/
     .family-section {
-        display: block;
+        display: grid;
         padding: 80px 10px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .family-container {
-        display: grid;
-        height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        height: 500px;
         overflow: visible;
         border-radius: 0;
     }
@@ -1698,12 +1717,13 @@ label {
     .family-content {
         display: grid;
         flex-grow: none;
+        margin-top: -80px;
     }
 
     .sidebar {
         display: flex;
-        flex-direction: column;
-        width: auto;
+        flex-direction: row;
+        width: 100%;
         background-color: var(--dark-theme);
         padding: 10px;
         margin: 0;
@@ -1821,9 +1841,9 @@ label {
 
     .card-charger {
         object-fit: fill;
-        margin-left: 60%;
-        margin-top: -50px;
-        width: 150px;
+        margin-left: 65%;
+        margin-top: -80px;
+        width: 130px;
         height: fit-content;
     }
 
