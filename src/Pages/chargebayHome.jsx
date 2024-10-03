@@ -5,6 +5,7 @@ import AnimatedSection from './AnimatedSection';
 import './chargebayHome.css';
 
 import logo from "../Images/Logo White.png"
+import logomob from "../Images/Logo Black.png"
 
 import bannerimg from "../Images/banner.png"
 
@@ -46,6 +47,8 @@ import linkedin from "../Images/in logo.png"
 import yt from "../Images/yt logo.png"
 
 const ChargeBayHome = () => {
+
+  const isMobileView = window.innerWidth <= 768;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -155,23 +158,23 @@ const ChargeBayHome = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like UPI and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
+      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like Apple Pay and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
       name: "Aaron Powell",
-      location: "Tempa, Florida",
+      location: "Tampa, Florida",
       image: { person }
     },
     {
       id: 2,
-      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like UPI and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
+      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like Apple Pay and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
       name: "Wade Warren",
-      location: "Tempa, Florida",
+      location: "Tampa, Florida",
       image: { person }
     },
     {
       id: 3,
-      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like UPI and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
+      quote: "ChargeBay makes EV charging a breeze! The app is easy to use, with accurate station availability and seamless payment options like Apple Pay and cards. It's been my go-to for convenient, stress-free charging! The interface is intuitive, and I love how quickly I can find nearby stations. Highly recommend it to all EV owners!",
       name: "Jane Cooper",
-      location: "Tempa, Florida",
+      location: "Tampa, Florida",
       image: { person }
     }
   ];
@@ -189,7 +192,21 @@ const ChargeBayHome = () => {
     }
   };
 
-  const isMobileView = window.innerWidth <= 768;
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleForm = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [isOpen]);
 
   return (
     <div className="chargebay-home">
@@ -203,36 +220,158 @@ const ChargeBayHome = () => {
             </AnimatedSection>
             <AnimatedSection animation="flyIn" direction="up">
               <nav id='desknavs'>
-                <ul >
-                  <li>Drivers</li>
-                  <li>Hosts </li>
-                  <li>Our Solution</li>
-                  <li>Our Partners</li>
-                  <li>The Company</li>
+                <ul>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Drivers <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Hosts <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Our Solution <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Our Partners</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">The Company</a>
+                  </li>
                   <div className="cta-buttons">
                     <button className="host-station">Host a Station</button>
-                    <button className="learn-more contacts"><span>Contact</span></button>
+                    <button onClick={toggleForm} className="learn-more contacts">
+                      <span>Contact</span>
+                    </button>
+                    {isOpen && (
+                      <div className="contact-form-overlay">
+                        <div className="contact-form">
+                          <button onClick={toggleForm} className="close-button" aria-label="Close form">
+                            ✕
+                          </button>
+                          <h2>Get in Touch</h2>
+                          <form onSubmit={(e) => e.preventDefault()}>
+                            <div className="form-group">
+                              <label htmlFor="fullName">Full Name</label>
+                              <input type="text" id="fullName" name="fullName" required />
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="email">Email Address</label>
+                              <input type="email" id="email" name="email" required />
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="inquiry">What's the nature of your inquiry</label>
+                              <select id="inquiry" name="inquiry" required>
+                                <option value="">Select an option</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                              </select>
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
+                              <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" className="submit-button">
+                              Send Message
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </ul>
               </nav>
               <nav id='mobnavs'>
-                <button className="menu-toggle" onClick={toggleMenu}>
+                <button id={isMenuOpen ? 'toggled' : ''} className="menu-toggle" onClick={toggleMenu}>
                   {isMenuOpen ? '✖' : '☰'}
                 </button>
                 <ul className={isMenuOpen ? 'open' : 'close'}>
                   <div className="logo-nav">
-                    <img src={logo} alt="Logo" />
+                    <img src={logomob} alt="Logo" />
                   </div>
-                  <li>Drivers ▼</li>
-                  <li>Hosts ▼</li>
-                  <li>Our Solution ▼</li>
-                  <li>Our Partners ▼</li>
-                  <li>The Company ▼</li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Drivers <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Hosts <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Our Solution <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Our Partners</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">The Company</a>
+                  </li>
                   <h5>Are you host?</h5>
                   <h3>Log in &#x2192;</h3>
                   <div className="cta-buttons">
-                    <button className="host-station">Host a Station</button>
-                    <button className="learn-more contacts"><span>Contact</span></button>
+                    <button onClick={toggleForm} className="navbtn contacts"><span>Contact</span></button>
+                    {isOpen && (
+                      <div className="contact-form-overlay">
+                        <div className="contact-form">
+                          <button onClick={toggleForm} className="close-button" aria-label="Close form">✕</button>
+                          <h2>Get in Touch</h2>
+                          <form onSubmit={(e) => e.preventDefault()}>
+                            <div className="form-group">
+                              <label htmlFor="fullName">Full Name</label>
+                              <input type="text" id="fullName" name="fullName" required />
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="email">Email Address</label>
+                              <input type="email" id="email" name="email" required />
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="inquiry">What's the nature of your inquiry</label>
+                              <select id="inquiry" name="inquiry" required>
+                                <option value="">Select an option</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                              </select>
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
+                              <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" className="submit-button">
+                              Send Message
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    )}
+                    <button className="navbtn host-station"><span>Host a Station</span></button>
                   </div>
                 </ul>
               </nav>
@@ -254,6 +393,7 @@ const ChargeBayHome = () => {
               </AnimatedSection>
             </div>
           </section>
+
         </div>
 
         <section className="greener-future">
@@ -371,7 +511,7 @@ const ChargeBayHome = () => {
             </div>
           </div>
           <div className="phone-mockup">
-            <AnimatedSection animation={!isMobileView ? "flyIn" : "slideIn"} direction={!isMobileView ? 'right' : "up"} length={150} delay={0.5}>
+            <AnimatedSection animation={!isMobileView ? "flyIn" : ""} direction='right' length={!isMobileView ? 150 : 0} delay={0.5}>
               <img src={phone} alt="ChargeBay App Mockup" />
             </AnimatedSection>
           </div>
