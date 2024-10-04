@@ -5,7 +5,7 @@
     --black: #000;
     --dark-theme: #00060e;
     --title-gray: #888;
-    --subtitle-gray: #7e7e7e;
+    --subtitle-gray: #7e7e7eb0;
     --highlight-green: #0cc301;
     --highlight-blue: #0774f3;
 }
@@ -32,7 +32,6 @@ p {
     background-size: cover;
     background-position: center;
     cursor: default;
-
 }
 
 .header {
@@ -151,6 +150,7 @@ nav ul {
     background-color: #000000c2;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
     padding-top: 3rem;
     padding-left: 4rem;
     padding-bottom: 12rem;
@@ -179,6 +179,7 @@ nav ul {
 
 .devicesimgdesk {
     display: flex;
+    z-index: 0;
 }
 
 .devicesimgmob {
@@ -278,29 +279,31 @@ nav ul {
 
 .contact-form-overlay {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    height: max-content;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background-color: #000000b2;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    z-index: 9999;
+    z-index: 100000;
     background-position-x: center;
-    animation: fadeIn 0.5s ease-out;
 }
 
 .contact-form {
+    top: 35px;
+    left: auto;
+    right: 50px;
     position: fixed;
     z-index: 9999;
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
+    width: fit-content;
+    height: 100vm;
     background-color: var(--white);
     padding: 20px;
-    overflow-y: auto;
-    animation: slideIn 0.3s ease-out;
+    border-radius: 29px;
+    animation: slideIn 1s ease-out;
 }
 
 @keyframes fadeIn {
@@ -323,15 +326,35 @@ nav ul {
     }
 }
 
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out;
+}
+
+.slide-out {
+    animation: slideOut 1s ease-out forwards;
+}
+
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    font-weight: bold;
+    top: 40px;
+    right: 30px;
     background: none;
-    border: none;
+    border: 1.5px solid var(--black);
+    border-radius: 50px;
     font-size: 24px;
     cursor: pointer;
-    color: #666;
+    color: var(--black);
 }
 
 .contact-form h2 {
@@ -347,19 +370,27 @@ nav ul {
 label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 200;
+    text-wrap: balance;
     color: var(--subtitle-gray);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
+    height: 35px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
 }
+
+.form-group select {
+    width: 95%;
+    height: 50px;
+}
+
 
 .form-group textarea {
     resize: vertical;
@@ -368,23 +399,30 @@ label {
 .submit-button {
     width: 100%;
     padding: 10px;
-    background-color: #000;
+    font-size: 1.1rem;
+    background-color: var(--dark-theme);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-    background-color: #333;
+    background-color: var(--black);
 }
 
 @media (max-width: 480px) {
-    .contact-form {
-        max-width: 80%;
+    .contact-form-overlay {
+        width: 100%;
     }
 
+    .contact-form {
+        margin-left: 0px;
+        right: 20px;
+        left: 20px;
+        width: 80%;
+    }
 }
 
 .streamline,
@@ -446,7 +484,7 @@ label {
 .streamline p {
     font-size: 1.6rem;
     max-width: 800px;
-    font-weight: 400;
+    font-weight: 200;
     color: var(--subtitle-gray);
 }
 
@@ -738,12 +776,12 @@ label {
 }
 
 .feature-btn {
-    padding: 15px 30px;
+    padding: 12px 38px;
     border: 1px solid --black;
     border-radius: 25px;
     background-color: transparent;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -777,7 +815,7 @@ label {
 /* Basic resets and utility imports if needed */
 .looking-for {
     border: none;
-    border-radius: 19px;
+    border-radius: 50px;
     background-color: #f7f7f7;
 }
 
@@ -1021,7 +1059,6 @@ label {
     top: 1rem;
     left: 1rem;
     color: #c4c4c4;
-    /* Update with your color variables */
 }
 
 .customer-testimonial-quote {
@@ -1065,7 +1102,8 @@ label {
 }
 
 .customer-next-testimonial-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    background-color:var(--black);
 }
 
 .customer-arrow-icon {
@@ -1433,7 +1471,7 @@ label {
         animation: dropdownCloseAnimation 0.8s forwards ease-in-out;
     }
 
-    .header nav ul h5{
+    .header nav ul h5 {
         font-size: .8rem;
     }
 
@@ -1462,7 +1500,7 @@ label {
         gap: 1;
     }
 
-    .nav-item:hover{
+    .nav-item:hover {
         display: block;
     }
 
@@ -1477,7 +1515,7 @@ label {
         padding: 0;
     }
 
-    .dropdown-menu a{
+    .dropdown-menu a {
         font-size: 1rem;
         width: fit-content;
     }
@@ -1792,7 +1830,7 @@ label {
 
     .feature-btn {
         font-size: 13px;
-        padding: 8px 10px;
+        padding: 10px 13.5px;
     }
 
     .store-link img {

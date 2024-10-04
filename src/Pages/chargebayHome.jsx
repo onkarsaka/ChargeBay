@@ -24,6 +24,7 @@ import workplace from "../Images/workplace.png"
 import retail from "../Images/publicretail.png"
 
 import phone from "../Images/phone.png"
+import phone2 from "../Images/phone 2.png"
 import playstore from "../Images/googleplay.png"
 import appstore from "../Images/appstore 1.png"
 
@@ -207,24 +208,31 @@ const ChargeBayHome = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
 
-  const toggleForm = () => setIsOpen(!isOpen);
-
-  useEffect(() => {
+  const toggleForm = () => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'visible';
+      setClosing(true);
+    } else {    
+      setIsOpen(true);  
     }
+  };
 
-    return () => {
-      document.body.style.overflow = 'visible';
-    };
-  }, [isOpen]);
+  const handleClose = () => {
+    setClosing(true);
+  };
+
+  const onAnimationEnd = () => {
+    if (closing) {
+      setIsOpen(false);  
+      setClosing(false); 
+    }
+  };
 
   return (
     <div className="chargebay-home">
       <main>
+
         <div id='hero-header' style={{ backgroundImage: `url(${bannerimg})` }}>
           <header className="header">
             <AnimatedSection animation="flyIn" direction="up">
@@ -235,77 +243,41 @@ const ChargeBayHome = () => {
             <AnimatedSection animation="flyIn" direction="up">
               <nav id='desknavs'>
                 <ul>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Drivers <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Drivers <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Hosts <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Hosts <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Our Solution <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Our Solution <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Our Partners</a>
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Our Partners</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">The Company</a>
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">The Company</a>
                   </li>
                   <div className="cta-buttons">
                     <button className="host-station">Host a Station</button>
                     <button onClick={toggleForm} className="learn-more contacts">
                       <span>Contact</span>
                     </button>
-                    {isOpen && (
-                      <div className="contact-form-overlay">
-                        <div className="contact-form">
-                          <button onClick={toggleForm} className="close-button" aria-label="Close form">
-                            ✕
-                          </button>
-                          <h2>Get in Touch</h2>
-                          <form onSubmit={(e) => e.preventDefault()}>
-                            <div className="form-group">
-                              <label htmlFor="fullName">Full Name</label>
-                              <input type="text" id="fullName" name="fullName" required />
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="email">Email Address</label>
-                              <input type="email" id="email" name="email" required />
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="inquiry">What's the nature of your inquiry</label>
-                              <select id="inquiry" name="inquiry" required>
-                                <option value="">Select an option</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                              </select>
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
-                              <textarea id="message" name="message" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" className="submit-button">
-                              Send Message
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </ul>
               </nav>
@@ -317,75 +289,41 @@ const ChargeBayHome = () => {
                   <div className="logo-nav">
                     <img src={logomob} alt="Logo" />
                   </div>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Drivers <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Drivers <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Hosts <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Hosts <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Our Solution <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Our Solution <span className="dropdown-arrow">▼</span></a>
+                    <ul className="dropdown-menu">
                       <li><a href="#">Item 1</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Our Partners</a>
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">Our Partners</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">The Company</a>
+                  <li className="nav-item">
+                    <a href="#" className="nav-link">The Company</a>
                   </li>
                   <h5>Are you host?</h5>
                   <h3>Log in &#x2192;</h3>
                   <div className="cta-buttons">
                     <button onClick={toggleForm} className="navbtn contacts"><span>Contact</span></button>
-                    {isOpen && (
-                      <div className="contact-form-overlay">
-                        <div className="contact-form">
-                          <button onClick={toggleForm} className="close-button" aria-label="Close form">✕</button>
-                          <h2>Get in Touch</h2>
-                          <form onSubmit={(e) => e.preventDefault()}>
-                            <div className="form-group">
-                              <label htmlFor="fullName">Full Name</label>
-                              <input type="text" id="fullName" name="fullName" required />
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="email">Email Address</label>
-                              <input type="email" id="email" name="email" required />
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="inquiry">What's the nature of your inquiry</label>
-                              <select id="inquiry" name="inquiry" required>
-                                <option value="">Select an option</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                              </select>
-                            </div>
-                            <div className="form-group">
-                              <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
-                              <textarea id="message" name="message" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" className="submit-button">
-                              Send Message
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    )}
-                    <button className="navbtn host-station"><span>Host a Station</span></button>
+                    <button className="navbtn"><span>Host a Station</span></button>
                   </div>
                 </ul>
               </nav>
@@ -393,6 +331,7 @@ const ChargeBayHome = () => {
           </header>
 
           <section className="hero">
+
             <AnimatedSection animation="flyIn" length={100} direction='left'>
               <div className="hero-content">
                 <h1>America's most <span className="highlight-green">affordable</span> EV charging Ecosystem</h1>
@@ -406,6 +345,7 @@ const ChargeBayHome = () => {
                 <img src={devicesimg} className='devicesimgdesk' />
               </AnimatedSection>
             </div>
+
           </section>
 
         </div>
@@ -526,7 +466,7 @@ const ChargeBayHome = () => {
           </div>
           <div className="phone-mockup">
             <AnimatedSection animation={!isMobileView ? "flyIn" : ""} direction='right' length={!isMobileView ? 150 : 0} delay={0.5}>
-              <img src={phone} alt="ChargeBay App Mockup" />
+              <img src={phone2} alt="ChargeBay App Mockup" />
             </AnimatedSection>
           </div>
         </section>
@@ -707,6 +647,45 @@ const ChargeBayHome = () => {
           </div>
         </footer>
 
+        {isOpen && (
+          <div className="contact-form-overlay">
+            <div
+              className={`contact-form ${closing ? "slide-out" : "slide-in"}`}
+              onAnimationEnd={onAnimationEnd} // Handle animation end event
+            >
+              <button onClick={handleClose} className="close-button" aria-label="Close form">
+                ✕
+              </button>
+              <h2>Get in Touch</h2>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div className="form-group">
+                  <label htmlFor="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email Address</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="inquiry">What's the nature of your inquiry</label>
+                  <select id="inquiry" name="inquiry" required>
+                    <option value="">Select an option</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button onClick={()=>{console.log("Msg Sended")}} className="submit-button">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
