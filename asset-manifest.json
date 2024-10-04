@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ChargeBay/static/css/main.74bb8a17.css",
-    "main.js": "/ChargeBay/static/js/main.8db0446e.js",
+    "main.css": "/ChargeBay/static/css/main.695f2447.css",
+    "main.js": "/ChargeBay/static/js/main.dda9e13d.js",
     "static/js/453.ab90b011.chunk.js": "/ChargeBay/static/js/453.ab90b011.chunk.js",
     "static/media/banner.png": "/ChargeBay/static/media/banner.655def1795d4900078f5.png",
     "static/media/publicretail.png": "/ChargeBay/static/media/publicretail.0b621cd501c779061753.png",
@@ -22,14 +22,15 @@
     "static/media/mapmob.png": "/ChargeBay/static/media/mapmob.885e741ff9d00089e31c.png",
     "static/media/phone.png": "/ChargeBay/static/media/phone.061332afd061b6b7ac9d.png",
     "static/media/person.png": "/ChargeBay/static/media/person.1861fa90800861d17c7c.png",
+    "static/media/Logo Black.png": "/ChargeBay/static/media/Logo Black.a8202b788f1f80080490.png",
     "static/media/Logo White.png": "/ChargeBay/static/media/Logo White.23e7df72f97cfa2591bd.png",
     "index.html": "/ChargeBay/index.html",
-    "main.74bb8a17.css.map": "/ChargeBay/static/css/main.74bb8a17.css.map",
-    "main.8db0446e.js.map": "/ChargeBay/static/js/main.8db0446e.js.map",
+    "main.695f2447.css.map": "/ChargeBay/static/css/main.695f2447.css.map",
+    "main.dda9e13d.js.map": "/ChargeBay/static/js/main.dda9e13d.js.map",
     "453.ab90b011.chunk.js.map": "/ChargeBay/static/js/453.ab90b011.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74bb8a17.css",
-    "static/js/main.8db0446e.js"
+    "static/css/main.695f2447.css",
+    "static/js/main.dda9e13d.js"
   ]
 }
