@@ -669,10 +669,10 @@ const ChargeBayHome = () => {
                 <div className="form-group">
                   <label htmlFor="inquiry">What's the nature of your inquiry</label>
                   <select id="inquiry" name="inquiry" required>
-                    <option value="">Select an option</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="">Select inquiry type</option>
+                    <option value="">Item 1</option>
+                    <option value="">Item 2</option>
+                    <option value="">Item 3</option>
                   </select>
                 </div>
                 <div className="form-group">
