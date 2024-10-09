@@ -14,6 +14,9 @@ import featured from "../Images/featured.png"
 import businessmodel from "../Images/businessmodel.png"
 import casestudyimg from "../Images/case Study.png"
 
+import station from "../Images/charging station.svg"
+import port from "../Images/charging port.png"
+
 function HousingPage() {
 
     const isMobileView = window.innerWidth <= 768;
@@ -164,29 +167,56 @@ function HousingPage() {
                     </div>
                 </section>
 
-                <section className="component-section">
-                    <h2 className="section-title">
+                <section className="problem-section">
+                    <h2 className="problem-section-title">
                         Where does the <span className="highlight-red">problem</span> lie?
                     </h2>
-                    <p className="section-text">
+                    <p className="problem-section-text">
                         Finding convenient charging spots is a hassle,<br></br>
                         and providing them to 100+ users with a personalised preference is an even,
                         bigger struggle.
                     </p>
-                    <p className="section-text">
+                    <p className="problem-section-text">
                         ChargeBay takes the hassle out for you to{' '}
                         <span className="highlight-bold">
                             provide your customers what they expect from you
                         </span>
                         .
                     </p>
-                    <p className="section-text">
+                    <p className="problem-section-text">
                         <span className="why-chargebay-highlight">CONVENIENCE...</span> at minimal upfront costs.
                     </p>
                 </section>
 
                 <section className="help-section">
+                    <div className="help-section-container">
+                        <h2 className="help-section-title">How do we help?</h2>
+                        <p className="help-section-subtitle">ChargeBay has the potential to</p>
 
+                        <div className="help-section-flex">
+                            <div className="help-section-flex-item">
+                                <div className="icon-container">
+                                    <img src={port} className="icon" />
+                                </div>
+                                <h3 className="help-section-flex-item-title">
+                                    Either plan and operate a shareable EV charging ecosystem with your residents
+                                </h3>
+                            </div>
+
+                            <div className="help-section-flex-item">
+                                <div className="icon-container">
+                                    <img src={station} className="icon" />
+                                </div>
+                                <h3 className="help-section-flex-item-title">
+                                    Make your existing charging infrastructure into an intelligent ecosystem.
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p className="help-section-section-text">
+                            ChargeBay does that at rates lower than any other, for you to upgrade your other amenities with a comfortable budget.
+                        </p>
+                    </div>
                 </section>
 
                 <section className='figureout'>
@@ -214,26 +244,22 @@ function HousingPage() {
                 <section className="business-model-section">
                     <h1>Flexible Business Models</h1>
                     <div className="business-model">
-                        <AnimatedSection animation='slideIn' direction='left' length={200} delay={0.2}>
-                            <div className="business-model-content">
-                                <div className="business-model-contentainer">
-                                    <h2 className="business-model-content-title">Host owned</h2>
-                                    <p className="business-model-content-subtitle">Own the chargers, and the experience, without a hassle for a nominal yearly fee</p>
-                                </div>
-                                <div className="business-model-contentainer">
-                                    <h2 className="business-model-content-title">Become a ChargeBay partner</h2>
-                                    <p className="business-model-content-subtitle">Earn and share revenue a almost no upfront costs</p>
-                                </div>
-                                <div className="business-model-contentainer">
-                                    <h2 className="business-model-content-title">Turn-key solution</h2>
-                                    <p className="business-model-content-subtitle">An investment free solution to keep you relevant on a budget</p>
-                                </div>
+                        <div className="business-model-content">
+                            <div className="business-model-contentainer">
+                                <h2 className="business-model-content-title">Host owned</h2>
+                                <p className="business-model-content-subtitle">Own the chargers, and the experience, without a hassle for a nominal yearly fee</p>
                             </div>
-                        </AnimatedSection>
+                            <div className="business-model-contentainer">
+                                <h2 className="business-model-content-title">Become a ChargeBay partner</h2>
+                                <p className="business-model-content-subtitle">Earn and share revenue a almost no upfront costs</p>
+                            </div>
+                            <div className="business-model-contentainer">
+                                <h2 className="business-model-content-title">Turn-key solution</h2>
+                                <p className="business-model-content-subtitle">An investment free solution to keep you relevant on a budget</p>
+                            </div>
+                        </div>
                         <div className="business-model-image">
-                            <AnimatedSection animation='fadeIn' delay={0.8}>
-                                <img src={businessmodel} alt="Modern apartment building with EV charging stations" />
-                            </AnimatedSection>
+                            <img src={businessmodel} alt="Modern apartment building with EV charging stations" />
                         </div>
 
                     </div>

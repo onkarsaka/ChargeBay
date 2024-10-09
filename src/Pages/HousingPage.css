@@ -88,8 +88,14 @@
 .consumer-reports-cards-container {
     flex-grow: 1;
     overflow-y: auto;
-    padding-right: 1rem;
     scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .consumer-reports-card {
@@ -164,7 +170,10 @@
 .why-chargebay-card {
     background: linear-gradient(150deg, #0000 0%, #030303 50%, #1d0a27 70%, #051420 100%);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #0466c8;
+    border-top: 1px solid #0466c8;
+    border-left: 1px solid #0466c8;
+    border-right: 1px solid #7d53b8;
+    border-bottom: 1px solid #7d53b8;
     border-radius: 20px;
     display: grid;
     justify-content: space-around;
@@ -195,29 +204,17 @@
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .why-chargebay-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .why-chargebay-card {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
 /*# why-chargebay section end*/
 
 /*# problem-section start*/
-.component-section {
+.problem-section {
     margin: 0 auto;
-    padding: 8rem 10rem;
+    padding: 9rem 10rem;
     padding-bottom: 4rem;
 }
 
-.section-title {
-    font-size: 2.5rem;
+.problem-section-title {
+    font-size: 2.6rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
@@ -226,8 +223,8 @@
     color: #e3342f;
 }
 
-.section-text {
-    font-size: 1.5rem;
+.problem-section-text {
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.2;
     max-width: 900px;
@@ -245,9 +242,88 @@
 /*# help-secton start*/
 .help-section {
     background-color: var(--dark-theme);
-    height: 100vh;
-    border-bottom-left-radius: 150px;
-    border-bottom-right-radius: 150px;
+    color: var(--white);
+    padding: 4rem 10rem;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.help-section-container {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.help-section-title {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: -2rem;
+}
+
+.help-section-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    color: var(--title-gray);
+}
+
+.help-section-flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.help-section-flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.icon-container {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.8 ease;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    color: #0c0d10;
+    animation: scaleinout 3s forwards infinite;
+}
+
+@keyframes scaleinout {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    40% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    60% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    100% {
+        opacity: 0;
+        scale: 0;
+    }
+
+}
+
+.help-section-flex-item-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.help-section-section-text {
+    font-size: 1.25rem;
+    margin-top: 3rem;
+    color: var(--title-gray);
 }
 
 /*# help-secton end*/
@@ -387,7 +463,7 @@
 }
 
 .business-model-image {
-    width: 75%;
+    width: 60%;
     height: 100%;
 }
 
@@ -492,6 +568,188 @@
     }
 
     /*# multifamily-hero section start*/
+
+    /*# consumerreport section start*/
+    .consumer-reports {
+        margin: 0;
+        padding: 5rem 2rem;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        background-color: var(--white);
+        font-family: Arial, sans-serif;
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .consumer-reports-title {
+        font-size: 1.1rem;
+        margin-bottom: .9rem;
+    }
+
+    .contbtn {
+        padding: 0 2rem;
+        padding-top: .6rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        align-self: normal;
+    }
+
+    .contbtn span {
+        font-size: 16px;
+        color: var(--black);
+    }
+
+    .consumer-reports-cards-container {
+        padding-right: 0;
+        margin: 0 -1.5rem;
+    }
+
+    .consumer-reports-card {
+        padding: 4rem 1rem;
+        margin-bottom: 3rem;
+        height: 120px;
+    }
+
+    .consumer-reports-card-content {
+        padding: 0px;
+        margin: 0;
+        margin-top: 0;
+    }
+
+    .consumer-reports-card h2 {
+        font-size: 1rem;
+        margin-bottom: -1rem;
+    }
+
+    .consumer-reports-card p {
+        font-size: .8rem;
+        line-height: 1.2;
+        max-width: 100%;
+    }
+
+    .consumer-reports-card-image {
+        border-radius: 15px;
+        width: 45%;
+        object-fit: cover;
+    }
+
+    /*# consumerreport section end*/
+
+    /*# why-chargebay section start*/
+
+    .why-chargebay-section {
+        padding: 4rem 2rem;
+    }
+
+    .why-chargebay-title {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .why-chargebay-cards {
+        gap: 30px;
+    }
+
+    .why-chargebay-card {
+        width: 450px;
+        min-height: 150px;
+    }
+
+    .why-chargebay-card-title {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    .why-chargebay-card-source {
+        font-size: .9rem;
+    }
+
+    /*# why-chargebay section end*/
+
+    /*# problem-section start*/
+    .problem-section {
+        margin: 0;
+        padding: 6rem 1rem;
+        padding-bottom: 4rem;
+    }
+
+    .problem-section-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+    .problem-section-text {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /*# problem-section end*/
+
+    /*# help-secton start*/
+    .help-section {
+        background-color: var(--dark-theme);
+        color: var(--white);
+        padding: 5rem 3rem;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .help-section-container {
+        max-width: 90rem;
+        margin: 0 auto;
+    }
+
+    .help-section-title {
+        font-size: 2rem;
+        margin-bottom: -1.5rem;
+    }
+
+    .help-section-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: var(--title-gray);
+    }
+
+    .help-section-flex {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .help-section-flex-item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .icon-container {
+        margin-left: 40%;
+    }
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+        color: #0c0d10;
+        animation: scaleinout 3s forwards infinite;
+    }
+
+    .help-section-flex-item-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+
+    .help-section-section-text {
+        font-size: .8rem;
+        margin-top: 3rem;
+        color: var(--title-gray);
+    }
+
+    /*# help-secton end*/
 
     /*# figureout section start*/
 
