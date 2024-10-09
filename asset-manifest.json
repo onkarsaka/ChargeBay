@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ChargeBay/static/css/main.621d2d03.css",
-    "main.js": "/ChargeBay/static/js/main.f9eaae28.js",
+    "main.css": "/ChargeBay/static/css/main.a39d66fe.css",
+    "main.js": "/ChargeBay/static/js/main.8b708916.js",
     "static/js/488.91d971aa.chunk.js": "/ChargeBay/static/js/488.91d971aa.chunk.js",
     "static/media/banner.png": "/ChargeBay/static/media/banner.655def1795d4900078f5.png",
     "static/media/publicretail.png": "/ChargeBay/static/media/publicretail.0b621cd501c779061753.png",
@@ -26,15 +26,17 @@
     "static/media/phone.png": "/ChargeBay/static/media/phone.061332afd061b6b7ac9d.png",
     "static/media/phone 2.png": "/ChargeBay/static/media/phone 2.7a8df802090b176f6778.png",
     "static/media/person.png": "/ChargeBay/static/media/person.1861fa90800861d17c7c.png",
+    "static/media/charging port.png": "/ChargeBay/static/media/charging port.b4a661e5f24c178de6bd.png",
     "static/media/Logo Black.png": "/ChargeBay/static/media/Logo Black.a8202b788f1f80080490.png",
     "static/media/Logo White.png": "/ChargeBay/static/media/Logo White.23e7df72f97cfa2591bd.png",
+    "static/media/charging station.svg": "/ChargeBay/static/media/charging station.cd08aa2eb98d5d742fc687e15028afae.svg",
     "index.html": "/ChargeBay/index.html",
-    "main.621d2d03.css.map": "/ChargeBay/static/css/main.621d2d03.css.map",
-    "main.f9eaae28.js.map": "/ChargeBay/static/js/main.f9eaae28.js.map",
+    "main.a39d66fe.css.map": "/ChargeBay/static/css/main.a39d66fe.css.map",
+    "main.8b708916.js.map": "/ChargeBay/static/js/main.8b708916.js.map",
     "488.91d971aa.chunk.js.map": "/ChargeBay/static/js/488.91d971aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.621d2d03.css",
-    "static/js/main.f9eaae28.js"
+    "static/css/main.a39d66fe.css",
+    "static/js/main.8b708916.js"
   ]
 }
