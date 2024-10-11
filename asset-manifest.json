@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ChargeBay/static/css/main.03de37f5.css",
-    "main.js": "/ChargeBay/static/js/main.7c5f2cb4.js",
+    "main.js": "/ChargeBay/static/js/main.b2f9558a.js",
     "static/js/488.91d971aa.chunk.js": "/ChargeBay/static/js/488.91d971aa.chunk.js",
     "static/media/banner.png": "/ChargeBay/static/media/banner.655def1795d4900078f5.png",
     "static/media/multifamilyhero.png": "/ChargeBay/static/media/multifamilyhero.5a66afbcfec96b6c30bb.png",
@@ -41,11 +41,11 @@
     "static/media/dropdownarrowblack.svg": "/ChargeBay/static/media/dropdownarrowblack.0205755b84b91eeb82d066300ed43c92.svg",
     "static/media/dropdownarrowwhite.svg": "/ChargeBay/static/media/dropdownarrowwhite.b679c1ffe24b7998f566206e729da5de.svg",
     "main.03de37f5.css.map": "/ChargeBay/static/css/main.03de37f5.css.map",
-    "main.7c5f2cb4.js.map": "/ChargeBay/static/js/main.7c5f2cb4.js.map",
+    "main.b2f9558a.js.map": "/ChargeBay/static/js/main.b2f9558a.js.map",
     "488.91d971aa.chunk.js.map": "/ChargeBay/static/js/488.91d971aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03de37f5.css",
-    "static/js/main.7c5f2cb4.js"
+    "static/js/main.b2f9558a.js"
   ]
 }
