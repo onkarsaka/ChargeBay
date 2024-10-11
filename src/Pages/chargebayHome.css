@@ -44,6 +44,7 @@ Link {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 4rem;
+    z-index: 9999;
 }
 
 #mobnavs {
@@ -101,7 +102,8 @@ nav ul {
 }
 
 .dropdown-arrow {
-    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
     margin-left: 0.5rem;
 }
 
@@ -113,7 +115,7 @@ nav ul {
     background-color: #1a1a1a;
     width: 150px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 10000;
     list-style-type: none;
     padding: 0;
 }
@@ -154,7 +156,6 @@ nav ul {
     background-color: #000000c2;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
     padding-top: 3rem;
     padding-left: 4rem;
     padding-bottom: 12rem;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './chargebayHome.css';
 import { useState, useEffect, useRef, contentRef } from 'react';
-import { ArrowRight} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../Components/AnimatedSection';
 
@@ -220,8 +220,8 @@ const ChargeBayHome = () => {
   const toggleForm = () => {
     if (isOpen) {
       setClosing(true);
-    } else {    
-      setIsOpen(true);  
+    } else {
+      setIsOpen(true);
     }
   };
 
@@ -231,8 +231,8 @@ const ChargeBayHome = () => {
 
   const onAnimationEnd = () => {
     if (closing) {
-      setIsOpen(false);  
-      setClosing(false); 
+      setIsOpen(false);
+      setClosing(false);
     }
   };
 
@@ -242,18 +242,14 @@ const ChargeBayHome = () => {
 
         <div id='hero-header' style={{ backgroundImage: `url(${bannerimg})` }}>
           <header>
-          <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm}/>
+            <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
           </header>
-
           <section className="hero">
-
             <AnimatedSection animation="flyIn" length={100} direction='left'>
               <div className="hero-content">
                 <h1>America's most <span className="highlight-green">affordable</span> EV charging Ecosystem</h1>
                 <p>For business and hosts looking to expand without hassle</p>
-                
                 <Link to="/page2"> <button className="learn-more transperant" ><span>Learn More</span></button></Link>
-                
               </div>
             </AnimatedSection>
             <div className="hero-image">
@@ -262,9 +258,7 @@ const ChargeBayHome = () => {
                 <img src={devicesimg} className='devicesimgdesk' />
               </AnimatedSection>
             </div>
-
           </section>
-
         </div>
 
         <section className="greener-future">
@@ -515,7 +509,7 @@ const ChargeBayHome = () => {
         </AnimatedSection>
 
         <footer>
-          <Footer/>
+          <Footer />
         </footer>
 
         {isOpen && (
@@ -550,7 +544,7 @@ const ChargeBayHome = () => {
                   <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
                   <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                <button onClick={()=>{console.log("Msg Sended")}} className="submit-button">
+                <button onClick={() => { console.log("Msg Sended") }} className="submit-button">
                   Send Message
                 </button>
               </form>

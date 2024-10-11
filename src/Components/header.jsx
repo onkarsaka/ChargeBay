@@ -6,6 +6,11 @@ import AnimatedSection from './AnimatedSection'
 import logo from "../Images/Logo White.png"
 import logomob from "../Images/Logo Black.png"
 
+import dropdownarrowblack from "../Images/dropdownarrowblack.svg"
+import dropdownarrowwhite from "../Images/dropdownarrowwhite.svg"
+import { ChevronDown } from 'lucide-react'
+
+
 const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
   return (
     <>
@@ -19,7 +24,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
           <nav id='desknavs'>
             <ul>
               <li className="nav-item">
-                <a href="#" className="nav-link">Drivers <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Drivers <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>
@@ -27,7 +32,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Hosts <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Hosts <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>
@@ -35,7 +40,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Our Solution <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Our Solution <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>
@@ -65,7 +70,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
                 <img src={logomob} alt="Logo" />
               </div>
               <li className="nav-item">
-                <a href="#" className="nav-link">Drivers <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Drivers <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>
@@ -73,7 +78,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Hosts <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Hosts <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>
@@ -81,7 +86,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm }) =>{
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link">Our Solution <span className="dropdown-arrow">▼</span></a>
+                <a href="#" className="nav-link">Our Solution <ChevronDown className="dropdown-arrow"></ChevronDown></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Item 1</a></li>
                   <li><a href="#">Item 2</a></li>

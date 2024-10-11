@@ -5,9 +5,14 @@ import AnimatedSection from '../Components/AnimatedSection';
 import Header from '../Components/header'
 import Footer from '../Components/Footer';
 
-import bannerimg from "../Images/banner.png"
+import dropdownarrowgrey from "../Images/dropdownarrrowgrey.svg"
+import multifamilybannerimg from "../Images/multifamilyhero.png"
+import charger from "../Images/charger.png"
 
 import tenantsimg from "../Images/tenants.png"
+import adapterimg from "../Images/adapter.png"
+import incomeimg from "../Images/income.png"
+import esgimg from "../Images/ESG.png"
 
 import figureout from "../Images/figureout.png"
 import featured from "../Images/featured.png"
@@ -49,7 +54,6 @@ function HousingPage() {
         }
     };
 
-
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const containerRef = useRef(null);
 
@@ -62,17 +66,17 @@ function HousingPage() {
         {
             title: "Adapt to cater the future",
             description: "Boost property value, and prepare for EV charging mandates.",
-            image: tenantsimg
+            image: adapterimg
         },
         {
             title: "Increase Net operating Income",
             description: "Increase ROI thruogh paid charging amenities for tenants.",
-            image: tenantsimg
+            image: incomeimg
         },
         {
             title: "Make an Impact",
             description: "Become a green leader and be eligible for ESG credits",
-            image: tenantsimg
+            image: esgimg
         }
     ];
 
@@ -104,7 +108,7 @@ function HousingPage() {
     return (
         <>
             <main>
-                <section id="hero-header" style={{ backgroundImage: `url(${bannerimg})` }}>
+                <section id="hero-header" style={{ backgroundImage: `url(${multifamilybannerimg})` }}>
                     <header>
                         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
                     </header>
@@ -148,19 +152,19 @@ function HousingPage() {
                         Why should you consider <span className="why-chargebay-highlight">ChargeBay</span>?
                     </h2>
                     <div className="why-chargebay-cards">
-                        <div className="why-chargebay-card">
+                        <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">50% of all new cars will be EV by 2030</h3>
                             <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">White House</a></p>
                         </div>
-                        <div className="why-chargebay-card">
+                        <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">35% of all EV chargers will be at Multi-family developments</h3>
                             <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">PWC</a></p>
                         </div>
-                        <div className="why-chargebay-card">
+                        <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">58% of Renters are willing to pay more to live at a location with EV charging amenities</h3>
                             <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">Multi-Family Executive</a></p>
                         </div>
-                        <div className="why-chargebay-card">
+                        <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">65% of EV chargers are always occupied at prime times</h3>
                             <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">500 Interviews done by ChargeBay Team</a></p>
                         </div>
@@ -226,9 +230,9 @@ function HousingPage() {
                             <img src={figureout} alt="" />
                         </div>
                         <div className="figureout-content-para">
-                            <p >Types of Property<span className='arrow'>▼</span></p>
-                            <p >Your Requirements<span className='arrow'>▼</span></p>
-                            <p >No of Chargers<span className='arrow'>▼</span></p>
+                            <p >Types of Property<img src={dropdownarrowgrey} className="dropdown-arrow-grey"></img></p>
+                            <p >Your Requirements<img src={dropdownarrowgrey} className="dropdown-arrow-grey"></img></p>
+                            <p >No of Chargers<img src={dropdownarrowgrey} className="dropdown-arrow-grey"></img></p>
                             <button className="learn-more"><span>Request qoute</span></button>
                         </div>
                     </div>
