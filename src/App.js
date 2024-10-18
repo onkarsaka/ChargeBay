@@ -6,6 +6,7 @@ import UnderConstructionPage from './Pages/UnderConstructionPage';
 import AboutChargingPage from './Pages/AboutChargingPage';
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path='/' element={<HomePage/>} />
