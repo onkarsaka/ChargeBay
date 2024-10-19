@@ -4,8 +4,12 @@ import Header from '../Components/header'
 
 import underconstruction from "../Images/underconstruction.png"
 
+import MegaMenus from '../Components/MegaMenus'
+
 function UnderConstructionPage() {
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeNavItem, setActiveNavItem] = useState(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -35,7 +39,16 @@ function UnderConstructionPage() {
     return (
         <>
             <header className="underconstructionbody">
-                <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
+            <header>
+            <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
+          </header>
+          {activeNavItem && (
+            <MegaMenus
+              activeNavItem={activeNavItem}
+              setIsNavItemHover={setActiveNavItem}
+              toggleForm={toggleForm}
+            />
+          )}
                 <section className="underconstruction">
                     <h1>This page is under Construction...<br></br>
                         <button onClick={()=>{

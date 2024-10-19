@@ -37,7 +37,7 @@ function Footer() {
                     </div>
                     <div className="footer-right">
                         <span className="host-text">Are you a host?<br /></span>
-                        <button className="login-button">Log in</button>
+                        <button className="learn-more login-button"><span>Log in</span></button>
                     </div>
                 </div>
                 <div className="footer-divider"></div>

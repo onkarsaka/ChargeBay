@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../Components/AnimatedSection';
 
-
 import logo from "../Images/Logo White.png"
 import logomob from "../Images/Logo Black.png"
 
@@ -44,17 +43,12 @@ import person from "../Images/person.png"
 
 import casestudyimg from "../Images/case Study.png"
 
-import fb from "../Images/fb logo.png"
-import twiter from "../Images/x logo.png"
-import linkedin from "../Images/in logo.png"
-import yt from "../Images/yt logo.png"
 import Footer from '../Components/Footer';
-
 import Header from '../Components/header';
-
-
+import MegaMenus from '../Components/MegaMenus';
 
 const ChargeBayHome = () => {
+
 
   useEffect(() => {
     const setViewport = () => {
@@ -73,7 +67,7 @@ const ChargeBayHome = () => {
   const isMobileView = window.innerWidth <= 768;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [activeNavItem, setActiveNavItem] = useState(null);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -239,11 +233,11 @@ const ChargeBayHome = () => {
   return (
     <div className="chargebay-home">
       <main>
-
         <div id='hero-header' style={{ backgroundImage: `url(${bannerimg})` }}>
           <header>
-            <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
+            <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
           </header>
+
           <section className="hero">
             <AnimatedSection animation="flyIn" length={100} direction='left'>
               <div className="hero-content">
@@ -500,7 +494,7 @@ const ChargeBayHome = () => {
               <h6 className="case-study-description">
                 Like most existing buildings, New Times Square faced significant electrical capacity constraints when considering adding EV chargers. A networked load managed approach allowed residents to access their own private charger while saving the corporation time and money.
               </h6>
-              <button className="learn-more"><span>Learn More</span></button>
+              <button className="learn-more-white"><span>Learn More</span></button>
             </div>
             <div className="case-study-image">
               <img src={casestudyimg} alt="Modern apartment building with EV charging stations" />
@@ -511,7 +505,14 @@ const ChargeBayHome = () => {
         <footer>
           <Footer />
         </footer>
-
+        
+        {activeNavItem && (
+          <MegaMenus
+            activeNavItem={activeNavItem}
+            setIsNavItemHover={setActiveNavItem}
+            toggleForm={toggleForm}
+          />
+        )}
         {isOpen && (
           <div className="contact-form-overlay">
             <div

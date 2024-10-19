@@ -22,12 +22,14 @@ import casestudyimg from "../Images/case Study.png"
 import station from "../Images/charging station.svg"
 import port from "../Images/charging port.png"
 
+import MegaMenus from '../Components/MegaMenus';
+
 function HousingPage() {
 
     const isMobileView = window.innerWidth <= 768;
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [activeNavItem, setActiveNavItem] = useState(null);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -110,8 +112,9 @@ function HousingPage() {
             <main>
                 <section id="hero-header" style={{ backgroundImage: `url(${multifamilybannerimg})` }}>
                     <header>
-                        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
+                        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
                     </header>
+
 
                     <section className="multifamily-hero">
                         <AnimatedSection animation="flyIn" length={100} direction='left'>
@@ -296,7 +299,13 @@ function HousingPage() {
                     <Footer />
                 </footer>
             </main>
-
+            {activeNavItem && (
+                <MegaMenus
+                    activeNavItem={activeNavItem}
+                    setIsNavItemHover={setActiveNavItem}
+                    toggleForm={toggleForm}
+                />
+            )}
             {isOpen && (
                 <div className="contact-form-overlay">
                     <div

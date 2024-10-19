@@ -61,7 +61,7 @@
 
 .footer-right {
     flex-wrap: wrap;
-    text-align: center;
+    text-align: start;
 }
 
 .host-text {
@@ -73,17 +73,11 @@
     background-color: transparent;
     border: 1px solid var(--white);
     color: var(--white);
-    padding: 8px 40px;
+    padding: 10px 40px;
     border-radius: 20px;
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
-}
-
-.login-button:hover {
-    background-color: var(--white);
-    color: var(--black);
-    ;
 }
 
 .footer-divider {

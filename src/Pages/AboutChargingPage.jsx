@@ -17,9 +17,12 @@ import chargerimg from "../Images/charger.png"
 import playstore from "../Images/googleplay.png"
 import appstore from "../Images/appstore 1.png"
 
+import MegaMenus from '../Components/MegaMenus';
+
 function AboutChargingPage() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeNavItem, setActiveNavItem] = useState(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -61,7 +64,7 @@ function AboutChargingPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const titles = [
         { id: 1, text: 'The ChargeBay App' },
-        { id: 2, text: 'Pay as you go ' ,subText : "with ChargeBay card"},
+        { id: 2, text: 'Pay as you go ', subText: "with ChargeBay card" },
         { id: 3, text: 'Instant charging with our app-clips simply scan the QR code' },
     ];
 
@@ -84,8 +87,15 @@ function AboutChargingPage() {
             <main>
                 <section id="hero-header" style={{ backgroundImage: `url(${multifamilybannerimg})` }}>
                     <header>
-                        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} />
+                        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
                     </header>
+                    {activeNavItem && (
+                        <MegaMenus
+                            activeNavItem={activeNavItem}
+                            setIsNavItemHover={setActiveNavItem}
+                            toggleForm={toggleForm}
+                        />
+                    )}
                     <section className="chargings-hero">
                         <div className="chargings-hero-content">
                             <h1>Convenient Charging,<br /> all at this <span className="abt-charging-highlight">One-Stop.</span></h1>

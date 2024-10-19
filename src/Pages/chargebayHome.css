@@ -44,7 +44,7 @@ Link {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 4rem;
-    z-index: 9999;
+    z-index: 109999;
 }
 
 #mobnavs {
@@ -90,10 +90,11 @@ nav ul {
 .nav-item {
     position: relative;
     margin-right: 2rem;
+    cursor: default;
 }
 
 .nav-link {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -105,6 +106,86 @@ nav ul {
     width: 20px;
     height: 20px;
     margin-left: 0.5rem;
+}
+
+.mega-menudiv {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 350px;
+}
+
+.mega-menu {
+    position: absolute;
+    width: 80%;
+    top: 50px;
+    left: 5%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    border-radius: 19px;
+    padding: 1rem 4rem;
+    animation: fadeIn .8s forwards;
+}
+
+.mega-menu-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.mega-menu-image {
+    width: 35%;
+    padding-right: 2rem;
+}
+
+.mega-menu-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mega-menu-links {
+    width: 60%;
+    display: flex;
+}
+
+.mega-menu-column {
+    width: 50%;
+}
+
+.mega-menu-column h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.mega-menu-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu-column ul li a {
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.mega-menu-column ul li a:hover {
+    color: #0cc301;
 }
 
 .dropdown-menu {
@@ -120,8 +201,12 @@ nav ul {
     padding: 0;
 }
 
-.nav-item:hover .dropdown-menu {
-    display: block;
+.nav-item:hover {
+    margin-right: 16px;
+    margin-left: 0;
+    padding: 5px 8px;
+    border-radius: 29px;
+    background-color: #7e7e7e49;
 }
 
 .dropdown-menu a {
@@ -258,6 +343,70 @@ nav ul {
 }
 
 .learn-more span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.learn-more-white {
+    position: relative;
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0.8rem 1.5rem;
+    border: 1.5px solid var(--black);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.learn-more-white.transperant{
+    background-color: #0000;
+}
+
+.learn-more-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    z-index: 0;
+    border-radius: 50px;
+    /* Match the border radius of the button */
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+}
+
+.learn-more-white::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    z-index: 0;
+    border-radius: 50px;
+    /* Match the border radius of the button */
+    transition: transform 0.5s ease;
+    transform: translateX(100%);
+}
+
+.learn-more-white:hover::before {
+    transform: translateX(100%);
+}
+
+.learn-more-white:hover {
+    color: var(--white);
+    /* Text color changes to black */
+}
+
+.learn-more-white span {
     position: relative;
     z-index: 1;
     transition: color 0.4s ease;
@@ -1333,7 +1482,8 @@ label {
         color: var(--black);
         gap: 1;
     }
-    .dropdown-menu{
+
+    .dropdown-menu {
         display: none;
         position: relative;
         top: 100%;
@@ -1344,6 +1494,11 @@ label {
         z-index: 1;
         list-style-type: none;
         padding: 0;
+    }
+
+    .nav-item:hover {
+        padding: 0;
+        background-color: var(--white);
     }
 
     .nav-item:hover .dropdown-menu {
