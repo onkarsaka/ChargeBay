@@ -505,7 +505,7 @@ const ChargeBayHome = () => {
         <footer>
           <Footer />
         </footer>
-        
+
         {activeNavItem && (
           <MegaMenus
             activeNavItem={activeNavItem}

@@ -38,6 +38,10 @@
     color: #999999;
 }
 
+.email {
+    color: white;
+}
+
 .footer-middle {
     flex: 2;
     display: flex;
@@ -50,13 +54,13 @@
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .footer-links a {
     color: var(--white);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .footer-right {
@@ -131,10 +135,10 @@
 
     .footer-content {
         flex-direction: column;
+        margin-bottom: 0;
     }
 
     .footer-left,
-
     .footer-right {
         flex: 1;
         margin-bottom: 30px;
@@ -143,6 +147,8 @@
 
     .footer-middle {
         flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 50px;
     }
 
     .footer-bottom {
