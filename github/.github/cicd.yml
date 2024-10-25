@@ -12,19 +12,19 @@ uses: actions/checkout@v3
 -name: login to docker hub
 run: docker login -u $ {{ secrets.DOCKER_USERNAME }} -p $ {{ secrets.DOCKER_PASSWORD}}
 -name: Build Docker Image
-run: docker build -t integrationninjas/chargebay .
+run: docker build -t ajaygavasne/chargebay .
 -name: publish image to docker hub
-run: docker push integrationninjas/chargebay:latest
+run: docker push ajaygavasne/chargebay:latest
 
 deploy:
 needs: build
 runs-on: aws-ec2
 steps:
 -name: Pull image from docker hub
-run: docker pull integrationninjas/chargebay:latest
+run: docker pull ajaygavasne/chargebay:latest
 -name: delete old Container
 run: docker rm -f reactContainer
 -name: run docker container
-run: docker run -d -p 3000:80 --name reactContainer integrationninjas/chargebay
+run: docker run -d -p 3000:80 --name reactContainer ajaygavasne/chargebay
 
 
